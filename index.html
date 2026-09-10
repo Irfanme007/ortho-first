@@ -25,7 +25,7 @@
     <meta name="twitter:description" content="Orthopaedic and physiotherapy care in Virajpet, Coorg.">
     <meta name="twitter:image" content="https://orthofirst.com/assets/og-image.jpg">
 
-    <link rel="icon" href="/assets/logo.png">
+    <link rel="icon" href="assets/logo.png">
 
     <!-- Tailwind CDN, as requested -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -91,8 +91,20 @@
 
       .hero-glow {
         background:
-          radial-gradient(circle at 78% 18%, rgba(168,194,228,.48), transparent 28%),
-          radial-gradient(circle at 8% 90%, rgba(231,240,251,.90), transparent 32%);
+          radial-gradient(circle at 78% 18%, rgba(168,194,228,.20), transparent 28%),
+          radial-gradient(circle at 8% 90%, rgba(231,240,251,.55), transparent 32%);
+      }
+      .hero-photo-section {
+        background: #f5fbf8;
+      }
+      .hero-premium { isolation: isolate; }
+      .hero-image-aura { animation: heroAura 8s ease-in-out infinite; }
+      @keyframes heroAura { 0%,100%{transform:scale(.98);opacity:.68} 50%{transform:scale(1.035);opacity:1} }
+      .hero-photo-section > img {
+        filter: saturate(.92) contrast(.98);
+      }
+      @media (max-width: 1023px) {
+        .hero-photo-section > img { opacity: .82; }
       }
 
       .leaf-shape {
@@ -246,7 +258,8 @@
       @media (prefers-reduced-motion: reduce) {
         .hero-float,
         .pulse-soft,
-        .whatsapp-action::before {
+        .whatsapp-action::before,
+        .hero-image-aura {
           animation: none;
         }
         .shine::after { display: none; }
@@ -329,7 +342,7 @@
     <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl transition-all duration-300">
       <nav class="mx-auto flex h-[74px] max-w-7xl items-center justify-between px-5 lg:px-10" aria-label="Main navigation">
         <a href="#home" class="flex items-center" aria-label="Ortho First home">
-          <img src="/assets/logo.png" alt="Ortho First" width="160" height="75" class="h-12 w-auto object-contain">
+          <img src="assets/logo.png" alt="Ortho First" width="160" height="75" class="h-12 w-auto object-contain">
         </a>
 
         <div class="hidden items-center gap-8 lg:flex">
@@ -367,59 +380,64 @@
 
     <main id="home">
 
-      <!-- HERO -->
-      <section class="hero-glow soft-grid relative overflow-hidden px-5 pb-20 pt-32 sm:pt-36 lg:px-10 lg:pb-24">
-        <div class="pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-health-200/40 blur-3xl"></div>
-        <div class="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-health-100/70 blur-3xl"></div>
+      <!-- HERO / PREMIUM SPLIT -->
+      <section class="hero-premium relative overflow-hidden bg-white px-5 pt-[76px] sm:px-8 lg:px-10">
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-[48%] bg-gradient-to-br from-health-50/70 via-white to-white"></div>
+        <div class="pointer-events-none absolute right-[-80px] top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-health-50/70 blur-3xl"></div>
 
-        <div class="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[.88fr_1.12fr]">
-          <div class="reveal">
-            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-health-200 bg-white/80 px-3.5 py-2 text-xs font-semibold text-health-800 shadow-sm">
-              <span class="h-2 w-2 rounded-full bg-health-500"></span>
-              Orthopaedic & Physiotherapy Care
-            </div>
+        <div class="relative mx-auto grid max-w-[1440px] items-center lg:min-h-[650px] lg:grid-cols-[.82fr_1.18fr] lg:gap-6">
+          <div class="relative z-10 py-14 sm:py-18 lg:py-20">
+            <div class="reveal max-w-[600px]">
+              <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-health-200 bg-health-50 px-3.5 py-2 text-xs font-semibold text-health-800">
+                <span class="h-2 w-2 rounded-full bg-health-500"></span>
+                Orthopaedic & Physiotherapy Care
+              </div>
 
-            <h1 class="display max-w-2xl text-5xl leading-[.98] sm:text-6xl lg:text-6xl">
-              Care for your
-              <span class="text-health-700">movement.</span>
-            </h1>
+              <h1 class="display max-w-[620px] text-[3.45rem] leading-[.95] sm:text-[4.6rem] lg:text-[5.25rem]">
+                Care for your
+                <span class="block text-health-700">movement.</span>
+              </h1>
 
-            <p class="mt-7 max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
-              Ortho First brings orthopaedic care and personalized physiotherapy rehabilitation together in Virajpet, Coorg — with a calm, clear and patient-centred approach.
-            </p>
+              <p class="mt-7 max-w-[555px] text-base leading-7 text-[var(--muted)] sm:text-[1.08rem]">
+                Ortho First brings orthopaedic care and personalized physiotherapy rehabilitation together in Virajpet, Coorg — with a calm, clear and patient-centred approach.
+              </p>
 
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="https://wa.me/919148284646?text=Hello%20Ortho%20First%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" rel="noopener noreferrer" class="shine rounded-full bg-health-900 px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-health-900/10 transition hover:-translate-y-1 hover:bg-health-700">
-                Start a conversation
-              </a>
-              <a href="tel:+919148284646" class="rounded-full border border-black/10 bg-white/90 px-6 py-3.5 text-center text-sm font-semibold transition hover:-translate-y-1 hover:border-health-500 hover:text-health-700">
-                Speak with the clinic
-              </a>
-            </div>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="https://wa.me/919148284646?text=Hello%20Ortho%20First%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" rel="noopener noreferrer" class="shine rounded-full bg-health-900 px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-health-900/10 transition hover:-translate-y-1 hover:bg-health-700">
+                  Start a conversation
+                </a>
+                <a href="tel:+919148284646" class="rounded-full border border-black/10 bg-white px-6 py-3.5 text-center text-sm font-semibold transition hover:-translate-y-1 hover:border-health-500 hover:text-health-700">
+                  Speak with the clinic
+                </a>
+              </div>
 
-            <div class="mt-10 flex flex-wrap gap-3 text-xs font-medium text-health-800">
-              <span class="rounded-full bg-white/85 px-4 py-2 shadow-sm">Assessment-led care</span>
-              <span class="rounded-full bg-white/85 px-4 py-2 shadow-sm">Personalized treatment</span>
-              <span class="rounded-full bg-white/85 px-4 py-2 shadow-sm">Rehabilitation</span>
-            </div>
-          </div>
-
-          <div class="reveal">
-            <div class="hero-float image-zoom relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-2 shadow-clinic">
-              <div class="relative overflow-hidden rounded-[2rem]">
-                <img src="/assets/hospital.png" alt="Ortho First orthopaedic and physiotherapy care in Virajpet" width="1200" height="900" fetchpriority="high" class="h-[400px] w-full object-cover sm:h-[500px]">
-                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-health-950/55 to-transparent p-6 pt-24">
-                  <div class="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold text-health-900 backdrop-blur">
-                    <span class="h-2 w-2 rounded-full bg-health-500"></span>
-                    Virajpet · Kodagu
-                  </div>
-                </div>
+              <div class="mt-9 flex flex-wrap gap-2.5 text-xs font-medium text-health-800">
+                <span class="rounded-full bg-health-50 px-4 py-2">Assessment-led care</span>
+                <span class="rounded-full bg-health-50 px-4 py-2">Personalized treatment</span>
+                <span class="rounded-full bg-health-50 px-4 py-2">Rehabilitation</span>
               </div>
             </div>
           </div>
+
+          <div class="reveal relative flex min-h-[380px] items-center justify-center lg:min-h-[650px] lg:justify-end">
+            <div class="hero-image-aura pointer-events-none absolute right-[1%] top-[12%] hidden h-[72%] w-[88%] rounded-[50%] bg-health-50/90 blur-2xl lg:block"></div>
+            <img src="assets/hospital.png"
+                 alt="Ortho First hospital and clinic exterior in Virajpet"
+                 width="2048" height="1152" fetchpriority="high"
+                 class="hero-float relative z-10 block h-auto w-full max-w-[920px] object-contain object-center lg:max-w-[980px]">
+          </div>
+        </div>
+
+        <div class="relative z-20 mx-auto max-w-[1440px] border-t border-black/6 py-5">
+          <div class="reveal flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-medium uppercase tracking-[.12em] text-black/40">
+            <span><strong class="text-health-700">10+</strong> years orthopaedic experience</span>
+            <span class="hidden h-4 w-px bg-black/10 sm:block"></span>
+            <span><strong class="text-health-700">200+</strong> hip & knee replacements</span>
+            <span class="hidden h-4 w-px bg-black/10 sm:block"></span>
+            <span><strong class="text-health-700">15+</strong> years physiotherapy experience</span>
+          </div>
         </div>
       </section>
-
       <!-- TRUST / SUMMARY -->
       <section class="px-5 pb-6 lg:px-10">
         <div class="reveal mx-auto grid max-w-7xl gap-3 md:grid-cols-3">
@@ -472,37 +490,73 @@
 
       <!-- ABOUT THE HOSPITAL -->
       <section id="about" class="scroll-mt-24 bg-white px-5 py-20 lg:px-10">
-        <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
-          <div class="reveal">
-            <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">About Ortho First</p>
-            <h2 class="display mt-3 max-w-3xl text-4xl sm:text-5xl">A dedicated space for orthopaedic care, physiotherapy and rehabilitation.</h2>
-            <p class="mt-6 max-w-2xl text-sm leading-7 text-black/55 sm:text-base">
-              Ortho First is a focused healthcare setting in Virajpet, Coorg, bringing orthopaedic consultation and physiotherapy rehabilitation together. The clinic is designed around a calm, practical care journey — from assessment and diagnosis through treatment and recovery.
-            </p>
-            <div class="mt-8 grid gap-3 sm:grid-cols-3">
-              <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
-                <p class="text-sm font-semibold">Consultation</p>
-                <p class="mt-1 text-xs leading-5 text-black/45">Dedicated clinical spaces for assessment and discussion.</p>
+        <div class="mx-auto max-w-7xl">
+          <div class="grid items-center gap-12 lg:grid-cols-[.86fr_1.14fr]">
+            <div class="reveal">
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">About Ortho First</p>
+              <h2 class="display mt-3 max-w-3xl text-4xl sm:text-5xl">A dedicated space for orthopaedic care, physiotherapy and rehabilitation.</h2>
+              <p class="mt-6 max-w-2xl text-sm leading-7 text-black/55 sm:text-base">
+                Ortho First is a focused healthcare setting in Virajpet, Coorg, bringing orthopaedic consultation and physiotherapy rehabilitation together. The clinic is designed around a calm, practical care journey — from assessment and diagnosis through treatment and recovery.
+              </p>
+
+              <div class="mt-8 grid gap-3 sm:grid-cols-3">
+                <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
+                  <p class="text-sm font-semibold">Consultation</p>
+                  <p class="mt-1 text-xs leading-5 text-black/45">Dedicated clinical spaces for assessment and discussion.</p>
+                </div>
+                <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
+                  <p class="text-sm font-semibold">Imaging</p>
+                  <p class="mt-1 text-xs leading-5 text-black/45">On-site X-ray room within the clinic setting.</p>
+                </div>
+                <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
+                  <p class="text-sm font-semibold">Rehabilitation</p>
+                  <p class="mt-1 text-xs leading-5 text-black/45">Space and equipment for movement, exercise and recovery.</p>
+                </div>
               </div>
-              <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
-                <p class="text-sm font-semibold">Imaging</p>
-                <p class="mt-1 text-xs leading-5 text-black/45">On-site X-ray room visible within the clinic setting.</p>
+
+              <div class="mt-8 border-l-2 border-health-300 pl-5">
+                <p class="text-sm leading-6 text-black/55">
+                  Care is supported by specialist orthopaedic consultation and personalized physiotherapy, with an emphasis on clear communication and functional recovery.
+                </p>
               </div>
-              <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
-                <p class="text-sm font-semibold">Rehabilitation</p>
-                <p class="mt-1 text-xs leading-5 text-black/45">Space and equipment for movement, exercise and recovery.</p>
+            </div>
+
+            <div class="reveal">
+              <div class="image-zoom relative overflow-hidden rounded-[2.25rem] bg-health-50">
+                <img src="assets/treatment.png"
+                     alt="Dr. Poovaiah C.K. assessing a patient at Ortho First"
+                     loading="lazy"
+                     width="1536"
+                     height="1024"
+                     class="h-[430px] w-full object-cover sm:h-[560px]">
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-health-950/75 via-health-950/15 to-transparent p-6 sm:p-8">
+                  <p class="text-xs font-bold uppercase tracking-[.18em] text-white/65">Care in practice</p>
+                  <p class="mt-2 max-w-md text-sm font-semibold leading-6 text-white sm:text-base">
+                    Personal attention, clinical assessment and treatment focused on helping patients move with greater confidence.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-3 grid grid-cols-2 gap-3">
+                <div class="image-zoom overflow-hidden rounded-[1.75rem]">
+                  <img src="assets/img3.jpeg" alt="Ortho First X-ray room and equipment" loading="lazy" class="h-[190px] w-full object-cover sm:h-[220px]">
+                </div>
+                <div class="image-zoom overflow-hidden rounded-[1.75rem]">
+                  <img src="assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[190px] w-full object-cover sm:h-[220px]">
+                </div>
               </div>
             </div>
           </div>
-          <div class="reveal grid grid-cols-2 gap-3">
-            <div class="image-zoom overflow-hidden rounded-[2rem] sm:col-span-2">
-              <img src="/assets/img1.jpeg" alt="Ortho First consultation room in Virajpet" loading="lazy" class="h-[310px] w-full object-cover sm:h-[380px]">
+
+          <div class="reveal mt-10 grid gap-3 sm:grid-cols-3">
+            <div class="image-zoom overflow-hidden rounded-[1.75rem]">
+              <img src="assets/img1.jpeg" alt="Ortho First consultation room in Virajpet" loading="lazy" class="h-[210px] w-full object-cover">
             </div>
-            <div class="image-zoom overflow-hidden rounded-[2rem]">
-              <img src="/assets/img3.jpeg" alt="Ortho First X-ray room and equipment" loading="lazy" class="h-[220px] w-full object-cover">
+            <div class="image-zoom overflow-hidden rounded-[1.75rem]">
+              <img src="assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-[210px] w-full object-cover">
             </div>
-            <div class="image-zoom overflow-hidden rounded-[2rem]">
-              <img src="/assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[220px] w-full object-cover">
+            <div class="image-zoom overflow-hidden rounded-[1.75rem]">
+              <img src="assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="h-[210px] w-full object-cover">
             </div>
           </div>
         </div>
@@ -524,7 +578,7 @@
             <article class="lift reveal overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card">
               <div class="grid md:grid-cols-[.76fr_1fr]">
                 <div class="image-zoom overflow-hidden bg-health-50">
-                  <img src="/assets/sir.jpeg" alt="Dr. Poovaiah C.K., Consultant Orthopaedic Surgeon in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
+                  <img src="assets/sir.jpeg" alt="Dr. Poovaiah C.K., Consultant Orthopaedic Surgeon in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
                 </div>
                 <div class="p-7 sm:p-9">
                   <span class="inline-flex rounded-full bg-health-100 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.12em] text-health-800">Orthopaedic Surgeon</span>
@@ -554,7 +608,7 @@
             <article class="lift reveal overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card">
               <div class="grid md:grid-cols-[.76fr_1fr]">
                 <div class="image-zoom overflow-hidden bg-health-50">
-                  <img src="/assets/mam.jpeg" alt="Dr. Impa Poovaiah, Physiotherapist in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
+                  <img src="assets/mam.jpeg" alt="Dr. Impa Poovaiah, Physiotherapist in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
                 </div>
                 <div class="p-7 sm:p-9">
                   <span class="inline-flex rounded-full bg-health-100 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.12em] text-health-800">Physiotherapist</span>
@@ -766,30 +820,30 @@
 
           <div class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-12">
             <div class="image-zoom reveal overflow-hidden rounded-[2rem] sm:col-span-7">
-              <img src="/assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[330px] w-full object-cover sm:h-[500px]">
+              <img src="assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[330px] w-full object-cover sm:h-[500px]">
             </div>
             <div class="grid gap-3 sm:col-span-5">
               <div class="image-zoom reveal overflow-hidden rounded-[2rem]">
-                <img src="/assets/img1.jpeg" alt="Ortho First consultation room" loading="lazy" class="h-[240px] w-full object-cover">
+                <img src="assets/img1.jpeg" alt="Ortho First consultation room" loading="lazy" class="h-[240px] w-full object-cover">
               </div>
               <div class="grid grid-cols-2 gap-3">
-                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="/assets/img3.jpeg" alt="Ortho First X-ray room" loading="lazy" class="h-[250px] w-full object-cover"></div>
-                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="/assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-[250px] w-full object-cover"></div>
+                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="assets/img3.jpeg" alt="Ortho First X-ray room" loading="lazy" class="h-[250px] w-full object-cover"></div>
+                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-[250px] w-full object-cover"></div>
               </div>
             </div>
           </div>
 
           <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img2.jpeg" alt="Ortho First care space" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img5.jpeg" alt="Ortho First clinic corridor" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img7.jpeg" alt="Ortho First healthcare setting" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img8.jpeg" alt="Ortho First facility" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img2.jpeg" alt="Ortho First care space" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img5.jpeg" alt="Ortho First clinic corridor" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img7.jpeg" alt="Ortho First healthcare setting" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img8.jpeg" alt="Ortho First facility" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
           </div>
 
           <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img9.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img10.jpeg" alt="Ortho First care environment" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img9.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img10.jpeg" alt="Ortho First care environment" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
           </div>
         </div>
       </section>
@@ -866,7 +920,7 @@
       <div class="relative mx-auto max-w-7xl">
         <div class="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
           <div>
-            <img src="/assets/logo.png" alt="Ortho First" width="150" height="70" class="h-14 w-auto object-contain brightness-0 invert">
+            <img src="assets/logo.png" alt="Ortho First" width="150" height="70" class="h-14 w-auto object-contain brightness-0 invert">
             <p class="mt-5 max-w-md text-sm leading-6 text-white/55">
               Orthopaedic & Physiotherapy Care in Virajpet, Coorg — bringing diagnosis, treatment and rehabilitation together in one calm, patient-centred setting.
             </p>
@@ -952,4 +1006,3 @@
     </script>
   </body>
   </html>
-
