@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+}
+
+::selection {
+  background: #087f70;
+  color: white;
+}
+
+/* Scroll animations */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Better focus accessibility */
+
+:focus-visible {
+  outline: 3px solid rgba(8, 127, 112, 0.35);
+  outline-offset: 3px;
+}
+
+
+/* Respect accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* Prevent the mobile CTA from covering footer content */
+
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 64px;
+  }
+}

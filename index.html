@@ -1,0 +1,955 @@
+  <!doctype html>
+  <html lang="en-IN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4faf7">
+    <meta name="description" content="Ortho First in Virajpet, Coorg provides orthopaedic care, joint replacement, arthroscopy, trauma care, sports injury treatment, physiotherapy, pain management and rehabilitation.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://orthofirst.com/">
+
+    <title>Ortho First | Orthopaedic & Physiotherapy Care in Virajpet, Coorg</title>
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ortho First">
+    <meta property="og:title" content="Ortho First | Move Better. Live Stronger.">
+    <meta property="og:description" content="Orthopaedic and physiotherapy care in Virajpet, Coorg, with a patient-centred approach to diagnosis, treatment and rehabilitation.">
+    <meta property="og:url" content="https://orthofirst.com/">
+    <meta property="og:image" content="https://orthofirst.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ortho First | Orthopaedic & Physiotherapy Care">
+    <meta name="twitter:description" content="Orthopaedic and physiotherapy care in Virajpet, Coorg.">
+    <meta name="twitter:image" content="https://orthofirst.com/assets/og-image.jpg">
+
+    <link rel="icon" href="/assets/logo.png">
+
+    <!-- Tailwind CDN, as requested -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              health: {
+                50: "#f5fbf8",
+                100: "#e7f4ed",
+                200: "#cde8d9",
+                300: "#abd8c1",
+                500: "#54a679",
+                600: "#3b8f65",
+                700: "#2f7956",
+                800: "#256146",
+                900: "#1b4b38",
+                950: "#12382a"
+              }
+            },
+            boxShadow: {
+              clinic: "0 24px 70px rgba(27,75,56,.10)",
+              card: "0 12px 40px rgba(27,75,56,.07)"
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        --ink: #1b4b38;
+        --muted: #66776f;
+        --green: #3b8f65;
+        --green-dark: #1b4b38;
+        --mint: #e7f4ed;
+        --cream: #fbfcff;
+        --line: rgba(27,75,56,.10);
+      }
+
+      html { scroll-behavior: smooth; }
+      body {
+        min-width: 320px;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      ::selection { background: #cde8d9; color: #1b4b38; }
+
+      .display {
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: -.045em;
+      }
+
+      .soft-grid {
+        background-image:
+          linear-gradient(rgba(59,143,101,.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59,143,101,.055) 1px, transparent 1px);
+        background-size: 42px 42px;
+      }
+
+      .hero-glow {
+        background:
+          radial-gradient(circle at 78% 18%, rgba(168,194,228,.48), transparent 28%),
+          radial-gradient(circle at 8% 90%, rgba(231,240,251,.90), transparent 32%);
+      }
+
+      .leaf-shape {
+        border-radius: 55% 45% 60% 40% / 55% 45% 55% 45%;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .65s ease, transform .65s ease;
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .lift {
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      }
+      .lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 50px rgba(27,75,56,.10);
+        border-color: rgba(79,115,173,.22);
+      }
+
+      .image-zoom img { transition: transform .7s ease; }
+      .image-zoom:hover img { transform: scale(1.035); }
+
+      .nav-scrolled {
+        box-shadow: 0 8px 30px rgba(25,63,53,.08);
+        background: rgba(255,255,255,.96);
+      }
+
+      .focus-ring:focus-visible,
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid rgba(79,115,173,.30);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 1023px) {
+        body { padding-bottom: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal, .reveal.show, .lift, .image-zoom img {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      /* Healthcare motion system */
+      .hero-float {
+        animation: heroFloat 7s ease-in-out infinite;
+        will-change: transform;
+      }
+      .pulse-soft {
+        animation: pulseSoft 3.8s ease-in-out infinite;
+      }
+      .shine {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+      }
+      .shine::after {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 -120%;
+        width: 70%;
+        transform: skewX(-18deg);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,.24), transparent);
+        transition: left .75s ease;
+        pointer-events: none;
+      }
+      .shine:hover::after { left: 140%; }
+
+      .floating-actions {
+        position: fixed;
+        right: 20px;
+        bottom: 22px;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .floating-action {
+        position: relative;
+        display: grid;
+        width: 54px;
+        height: 54px;
+        place-items: center;
+        border-radius: 999px;
+        color: white;
+        box-shadow: 0 14px 34px rgba(20,43,77,.20);
+        transition: transform .28s ease, box-shadow .28s ease;
+      }
+      .floating-action:hover {
+        transform: translateY(-4px) scale(1.04);
+        box-shadow: 0 18px 42px rgba(20,43,77,.27);
+      }
+      .floating-action svg { width: 23px; height: 23px; }
+      .call-action { background: #1b4b38; }
+      .whatsapp-action { background: #3b8f65; }
+      .whatsapp-action::before {
+        content: "";
+        position: absolute;
+        inset: -5px;
+        border: 1px solid rgba(79,115,173,.22);
+        border-radius: inherit;
+        animation: ring 2.8s ease-out infinite;
+      }
+
+      .footer-orb {
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        filter: blur(2px);
+        background: rgba(107,143,194,.10);
+        pointer-events: none;
+      }
+      .footer-orb-one { right: -100px; top: -110px; }
+      .footer-orb-two { left: 30%; bottom: -220px; width: 360px; height: 360px; background: rgba(168,194,228,.07); }
+
+      @keyframes heroFloat {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(.35deg); }
+      }
+      @keyframes pulseSoft {
+        0%, 100% { transform: scale(1); opacity: .95; }
+        50% { transform: scale(1.04); opacity: 1; }
+      }
+      @keyframes ring {
+        0% { transform: scale(.88); opacity: .65; }
+        70%, 100% { transform: scale(1.32); opacity: 0; }
+      }
+
+      @media (max-width: 639px) {
+        .floating-actions {
+          right: 14px;
+          bottom: 14px;
+        }
+        .floating-action {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-float,
+        .pulse-soft,
+        .whatsapp-action::before {
+          animation: none;
+        }
+        .shine::after { display: none; }
+      }
+
+      .reveal:nth-child(2) { transition-delay: 70ms; }
+      .reveal:nth-child(3) { transition-delay: 140ms; }
+      .reveal:nth-child(4) { transition-delay: 210ms; }
+    </style>
+
+    <!-- Structured data: keep synchronized with visible content -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalClinic",
+          "@id": "https://orthofirst.com/#clinic",
+          "name": "Ortho First",
+          "url": "https://orthofirst.com/",
+          "logo": "https://orthofirst.com/assets/logo.png",
+          "image": "https://orthofirst.com/assets/og-image.jpg",
+          "telephone": "+919148284646",
+          "description": "Orthopaedic and physiotherapy care in Virajpet, Coorg.",
+          "medicalSpecialty": ["Orthopedic", "Physiotherapy"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Block no 13, PANJARPET",
+            "addressLocality": "Virajpet",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+          },
+          "areaServed": ["Virajpet", "Kodagu", "Coorg", "Karnataka"],
+          "employee": [
+            {"@id": "https://orthofirst.com/#poovaiah"},
+            {"@id": "https://orthofirst.com/#impa"}
+          ]
+        },
+        {
+          "@type": "Physician",
+          "@id": "https://orthofirst.com/#poovaiah",
+          "name": "Dr. Poovaiah C.K.",
+          "image": "https://orthofirst.com/assets/sir.jpeg",
+          "jobTitle": "Consultant Orthopaedic Surgeon",
+          "medicalSpecialty": "Orthopedic",
+          "worksFor": {"@id": "https://orthofirst.com/#clinic"}
+        },
+        {
+          "@type": "Physician",
+          "@id": "https://orthofirst.com/#impa",
+          "name": "Dr. Impa Poovaiah",
+          "image": "https://orthofirst.com/assets/mam.jpeg",
+          "jobTitle": "Physiotherapist",
+          "medicalSpecialty": "Physiotherapy",
+          "worksFor": {"@id": "https://orthofirst.com/#clinic"}
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://orthofirst.com/#website",
+          "url": "https://orthofirst.com/",
+          "name": "Ortho First",
+          "publisher": {"@id": "https://orthofirst.com/#clinic"}
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://orthofirst.com/#breadcrumbs",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://orthofirst.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Ortho First"}
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body class="antialiased">
+
+    <!-- HEADER -->
+    <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl transition-all duration-300">
+      <nav class="mx-auto flex h-[74px] max-w-7xl items-center justify-between px-5 lg:px-10" aria-label="Main navigation">
+        <a href="#home" class="flex items-center" aria-label="Ortho First home">
+          <img src="/assets/logo.png" alt="Ortho First" width="160" height="75" class="h-12 w-auto object-contain">
+        </a>
+
+        <div class="hidden items-center gap-8 lg:flex">
+          <a href="#about" class="text-sm font-medium text-black/55 transition hover:text-health-700">About</a>
+          <a href="#doctors" class="text-sm font-medium text-black/55 transition hover:text-health-700">Doctors</a>
+          <a href="#services" class="text-sm font-medium text-black/55 transition hover:text-health-700">Care</a>
+          <a href="#approach" class="text-sm font-medium text-black/55 transition hover:text-health-700">Approach</a>
+          <a href="#gallery" class="text-sm font-medium text-black/55 transition hover:text-health-700">Gallery</a>
+          <a href="#contact" class="text-sm font-medium text-black/55 transition hover:text-health-700">Contact</a>
+        </div>
+
+        <div class="hidden items-center gap-2 lg:flex">
+          <a href="#contact" class="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-health-500 hover:text-health-700">Visit Us</a>
+          <a href="https://wa.me/919148284646?text=Hello%20Ortho%20First%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" rel="noopener noreferrer" class="shine rounded-full bg-health-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-health-700">WhatsApp</a>
+        </div>
+
+        <button id="menu-button" type="button" class="rounded-full border border-black/10 bg-white p-3 lg:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" class="hidden border-t border-black/5 bg-white px-5 py-4 lg:hidden">
+        <div class="mx-auto max-w-7xl space-y-1">
+          <a href="#about" class="mobile-link block rounded-xl px-4 py-3 text-sm font-medium hover:bg-health-50">About</a>
+          <a href="#doctors" class="mobile-link block rounded-xl px-4 py-3 text-sm font-medium hover:bg-health-50">Doctors</a>
+          <a href="#services" class="mobile-link block rounded-xl px-4 py-3 text-sm font-medium hover:bg-health-50">Care</a>
+          <a href="#approach" class="mobile-link block rounded-xl px-4 py-3 text-sm font-medium hover:bg-health-50">Approach</a>
+          <a href="#gallery" class="mobile-link block rounded-xl px-4 py-3 text-sm font-medium hover:bg-health-50">Gallery</a>
+          <a href="#contact" class="mobile-link block rounded-xl px-4 py-3 text-sm font-medium hover:bg-health-50">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+
+      <!-- HERO -->
+      <section class="hero-glow soft-grid relative overflow-hidden px-5 pb-20 pt-32 sm:pt-36 lg:px-10 lg:pb-24">
+        <div class="pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-health-200/40 blur-3xl"></div>
+        <div class="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-health-100/70 blur-3xl"></div>
+
+        <div class="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[.88fr_1.12fr]">
+          <div class="reveal">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-health-200 bg-white/80 px-3.5 py-2 text-xs font-semibold text-health-800 shadow-sm">
+              <span class="h-2 w-2 rounded-full bg-health-500"></span>
+              Orthopaedic & Physiotherapy Care
+            </div>
+
+            <h1 class="display max-w-2xl text-5xl leading-[.98] sm:text-6xl lg:text-6xl">
+              Care for your
+              <span class="text-health-700">movement.</span>
+            </h1>
+
+            <p class="mt-7 max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+              Ortho First brings orthopaedic care and personalized physiotherapy rehabilitation together in Virajpet, Coorg — with a calm, clear and patient-centred approach.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="https://wa.me/919148284646?text=Hello%20Ortho%20First%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" rel="noopener noreferrer" class="shine rounded-full bg-health-900 px-6 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-health-900/10 transition hover:-translate-y-1 hover:bg-health-700">
+                Start a conversation
+              </a>
+              <a href="tel:+919148284646" class="rounded-full border border-black/10 bg-white/90 px-6 py-3.5 text-center text-sm font-semibold transition hover:-translate-y-1 hover:border-health-500 hover:text-health-700">
+                Speak with the clinic
+              </a>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-3 text-xs font-medium text-health-800">
+              <span class="rounded-full bg-white/85 px-4 py-2 shadow-sm">Assessment-led care</span>
+              <span class="rounded-full bg-white/85 px-4 py-2 shadow-sm">Personalized treatment</span>
+              <span class="rounded-full bg-white/85 px-4 py-2 shadow-sm">Rehabilitation</span>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="hero-float image-zoom relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-2 shadow-clinic">
+              <div class="relative overflow-hidden rounded-[2rem]">
+                <img src="/assets/hospital.png" alt="Ortho First orthopaedic and physiotherapy care in Virajpet" width="1200" height="900" fetchpriority="high" class="h-[400px] w-full object-cover sm:h-[500px]">
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-health-950/55 to-transparent p-6 pt-24">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold text-health-900 backdrop-blur">
+                    <span class="h-2 w-2 rounded-full bg-health-500"></span>
+                    Virajpet · Kodagu
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST / SUMMARY -->
+      <section class="px-5 pb-6 lg:px-10">
+        <div class="reveal mx-auto grid max-w-7xl gap-3 md:grid-cols-3">
+          <div class="lift rounded-3xl border border-health-100 bg-white p-6 shadow-card">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M12 6v12M6 12h12"/></svg>
+            </div>
+            <p class="text-sm font-semibold">Orthopaedic care</p>
+            <p class="mt-2 text-sm leading-6 text-black/50">Joint, bone, tendon, trauma and sports-related conditions.</p>
+          </div>
+
+          <div class="lift rounded-3xl border border-health-100 bg-white p-6 shadow-card">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M7 12.5 10.5 16 17 8.5M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"/></svg>
+            </div>
+            <p class="text-sm font-semibold">Physiotherapy</p>
+            <p class="mt-2 text-sm leading-6 text-black/50">Pain management, therapeutic exercise, mobility and rehabilitation.</p>
+          </div>
+
+          <div class="lift rounded-3xl border border-health-100 bg-white p-6 shadow-card">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M12 21s7-4.4 7-10V5l-7-2-7 2v6c0 5.6 7 10 7 10Z"/></svg>
+            </div>
+            <p class="text-sm font-semibold">Patient-centred care</p>
+            <p class="mt-2 text-sm leading-6 text-black/50">Clear assessment, individualized treatment and a focus on functional recovery.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NUMBERS -->
+      <section class="px-5 py-16 lg:px-10">
+        <div class="mx-auto max-w-7xl rounded-[2rem] bg-health-950 px-7 py-10 text-white sm:px-10">
+          <div class="grid gap-8 sm:grid-cols-3">
+            <div class="reveal">
+              <strong class="display text-4xl sm:text-5xl">10+</strong>
+              <p class="mt-2 text-sm text-white/55">Years of orthopaedic clinical experience</p>
+            </div>
+            <div class="reveal border-white/10 sm:border-l sm:pl-8">
+              <strong class="display text-4xl sm:text-5xl">200+</strong>
+              <p class="mt-2 text-sm text-white/55">Hip & knee joint replacement procedures</p>
+            </div>
+            <div class="reveal border-white/10 sm:border-l sm:pl-8">
+              <strong class="display text-4xl sm:text-5xl">15+</strong>
+              <p class="mt-2 text-sm text-white/55">Years of physiotherapy & rehabilitation experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ABOUT THE HOSPITAL -->
+      <section id="about" class="scroll-mt-24 bg-white px-5 py-20 lg:px-10">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
+          <div class="reveal">
+            <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">About Ortho First</p>
+            <h2 class="display mt-3 max-w-3xl text-4xl sm:text-5xl">A dedicated space for orthopaedic care, physiotherapy and rehabilitation.</h2>
+            <p class="mt-6 max-w-2xl text-sm leading-7 text-black/55 sm:text-base">
+              Ortho First is a focused healthcare setting in Virajpet, Coorg, bringing orthopaedic consultation and physiotherapy rehabilitation together. The clinic is designed around a calm, practical care journey — from assessment and diagnosis through treatment and recovery.
+            </p>
+            <div class="mt-8 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
+                <p class="text-sm font-semibold">Consultation</p>
+                <p class="mt-1 text-xs leading-5 text-black/45">Dedicated clinical spaces for assessment and discussion.</p>
+              </div>
+              <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
+                <p class="text-sm font-semibold">Imaging</p>
+                <p class="mt-1 text-xs leading-5 text-black/45">On-site X-ray room visible within the clinic setting.</p>
+              </div>
+              <div class="rounded-2xl border border-health-100 bg-health-50 p-4">
+                <p class="text-sm font-semibold">Rehabilitation</p>
+                <p class="mt-1 text-xs leading-5 text-black/45">Space and equipment for movement, exercise and recovery.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal grid grid-cols-2 gap-3">
+            <div class="image-zoom overflow-hidden rounded-[2rem] sm:col-span-2">
+              <img src="/assets/img1.jpeg" alt="Ortho First consultation room in Virajpet" loading="lazy" class="h-[310px] w-full object-cover sm:h-[380px]">
+            </div>
+            <div class="image-zoom overflow-hidden rounded-[2rem]">
+              <img src="/assets/img3.jpeg" alt="Ortho First X-ray room and equipment" loading="lazy" class="h-[220px] w-full object-cover">
+            </div>
+            <div class="image-zoom overflow-hidden rounded-[2rem]">
+              <img src="/assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[220px] w-full object-cover">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCTORS -->
+      <section id="doctors" class="scroll-mt-24 px-5 py-16 lg:px-10">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal max-w-2xl">
+            <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">Meet the team</p>
+            <h2 class="display mt-3 text-4xl sm:text-5xl">Experienced hands. Human care.</h2>
+            <p class="mt-5 text-sm leading-6 text-black/50 sm:text-base">
+              Orthopaedic and rehabilitation expertise working toward the same goal: helping you understand your condition and move forward with confidence.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-2">
+
+            <article class="lift reveal overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card">
+              <div class="grid md:grid-cols-[.76fr_1fr]">
+                <div class="image-zoom overflow-hidden bg-health-50">
+                  <img src="/assets/sir.jpeg" alt="Dr. Poovaiah C.K., Consultant Orthopaedic Surgeon in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
+                </div>
+                <div class="p-7 sm:p-9">
+                  <span class="inline-flex rounded-full bg-health-100 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.12em] text-health-800">Orthopaedic Surgeon</span>
+                  <h3 class="mt-4 text-2xl font-semibold">Dr. Poovaiah C.K.</h3>
+                  <p class="mt-1 text-sm text-black/45">MBBS, MS (Orthopaedics)</p>
+
+                  <p class="mt-6 text-sm leading-6 text-black/55">
+                    Consultant Orthopaedic Surgeon with 10+ years of clinical experience in the diagnosis and treatment of a wide range of orthopaedic conditions.
+                  </p>
+                  <p class="mt-4 text-sm leading-6 text-black/55">
+                    He has performed 200+ hip and knee joint replacement procedures and has expertise in arthroscopic shoulder and knee surgery, orthopaedic trauma, tendon repairs and sports injuries.
+                  </p>
+
+                  <div class="my-7 h-px bg-black/8"></div>
+                  <ul class="grid gap-2 text-sm text-black/60 sm:grid-cols-2">
+                    <li>✓ Joint replacement</li>
+                    <li>✓ Shoulder & knee arthroscopy</li>
+                    <li>✓ Orthopaedic trauma</li>
+                    <li>✓ Tendon repairs</li>
+                    <li>✓ Sports injuries</li>
+                    <li>✓ Conservative care</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="lift reveal overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card">
+              <div class="grid md:grid-cols-[.76fr_1fr]">
+                <div class="image-zoom overflow-hidden bg-health-50">
+                  <img src="/assets/mam.jpeg" alt="Dr. Impa Poovaiah, Physiotherapist in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
+                </div>
+                <div class="p-7 sm:p-9">
+                  <span class="inline-flex rounded-full bg-health-100 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.12em] text-health-800">Physiotherapist</span>
+                  <h3 class="mt-4 text-2xl font-semibold">Dr. Impa Poovaiah</h3>
+                  <p class="mt-1 text-sm text-black/45">BPT, MPT (Neuro)</p>
+
+                  <p class="mt-6 text-sm leading-6 text-black/55">
+                    Qualified Physiotherapist with 15+ years of clinical experience in physiotherapy and rehabilitation, with a Master’s in Neurological Physiotherapy.
+                  </p>
+                  <p class="mt-4 text-sm leading-6 text-black/55">
+                    Her approach combines accurate assessment, personalized treatment, pain management, therapeutic exercise and functional rehabilitation for musculoskeletal and neurological conditions.
+                  </p>
+
+                  <div class="my-7 h-px bg-black/8"></div>
+                  <ul class="grid gap-2 text-sm text-black/60 sm:grid-cols-2">
+                    <li>✓ Pain management</li>
+                    <li>✓ Therapeutic exercise</li>
+                    <li>✓ Neurological rehabilitation</li>
+                    <li>✓ Functional rehabilitation</li>
+                    <li>✓ Strength & mobility</li>
+                    <li>✓ Patient-centred care</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="scroll-mt-24 bg-health-50 px-5 py-20 lg:px-10">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div class="max-w-3xl">
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">Services at Ortho First</p>
+              <h2 class="display mt-3 text-4xl sm:text-5xl">Specialist care for <span class="text-health-700">movement, recovery and function.</span></h2>
+              <p class="mt-5 max-w-2xl text-sm leading-6 text-black/50 sm:text-base">
+                Orthopaedic consultation, treatment and rehabilitation are brought together in one coordinated care journey — from diagnosis to recovery.
+              </p>
+            </div>
+            <a href="#contact" class="hidden shrink-0 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-health-500 hover:text-health-700 sm:inline-flex">Visit Ortho First ↗</a>
+          </div>
+
+          <!-- Service menu -->
+          <div class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            <article class="lift reveal rounded-2xl border border-health-100 bg-white p-5 shadow-card">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700"><span class="text-lg">01</span></div>
+              <h3 class="mt-5 text-sm font-semibold leading-5">Joint Replacement</h3>
+              <p class="mt-2 text-xs leading-5 text-black/45">Hip & knee replacement care.</p>
+            </article>
+            <article class="lift reveal rounded-2xl border border-health-100 bg-white p-5 shadow-card">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700"><span class="text-lg">02</span></div>
+              <h3 class="mt-5 text-sm font-semibold leading-5">Arthroscopy</h3>
+              <p class="mt-2 text-xs leading-5 text-black/45">Shoulder & knee arthroscopic care.</p>
+            </article>
+            <article class="lift reveal rounded-2xl border border-health-100 bg-white p-5 shadow-card">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700"><span class="text-lg">03</span></div>
+              <h3 class="mt-5 text-sm font-semibold leading-5">Orthopaedic Trauma</h3>
+              <p class="mt-2 text-xs leading-5 text-black/45">Assessment and treatment of injuries.</p>
+            </article>
+            <article class="lift reveal rounded-2xl border border-health-100 bg-white p-5 shadow-card">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700"><span class="text-lg">04</span></div>
+              <h3 class="mt-5 text-sm font-semibold leading-5">Sports Injuries</h3>
+              <p class="mt-2 text-xs leading-5 text-black/45">Return to movement and activity.</p>
+            </article>
+            <article class="lift reveal rounded-2xl border border-health-100 bg-white p-5 shadow-card">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700"><span class="text-lg">05</span></div>
+              <h3 class="mt-5 text-sm font-semibold leading-5">Pain Management</h3>
+              <p class="mt-2 text-xs leading-5 text-black/45">Personalized strategies for pain relief.</p>
+            </article>
+            <article class="lift reveal rounded-2xl border border-health-100 bg-white p-5 shadow-card">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-health-100 text-health-700"><span class="text-lg">06</span></div>
+              <h3 class="mt-5 text-sm font-semibold leading-5">Rehabilitation</h3>
+              <p class="mt-2 text-xs leading-5 text-black/45">Strength, mobility and function.</p>
+            </article>
+          </div>
+
+          <!-- Two core service pillars -->
+          <div class="mt-6 grid gap-5 lg:grid-cols-2">
+            <article class="lift reveal rounded-[2rem] border border-health-100 bg-white p-7 shadow-card sm:p-9">
+              <div class="flex items-start justify-between">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-health-100 text-health-700">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M7 21v-4m0 0V7m0 10h10m0 0v4m0-4V7m-3-4h6v4h-6zM4 7h6v4H4z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-health-700">01 · ORTHOPAEDICS</span>
+              </div>
+              <h3 class="mt-6 text-2xl font-semibold">Diagnosis, treatment & surgical care.</h3>
+              <p class="mt-4 text-sm leading-6 text-black/50">Care for bones, joints, muscles, tendons and orthopaedic injuries, including conservative treatment and surgical care where appropriate.</p>
+              <div class="mt-8 grid gap-3 sm:grid-cols-2">
+                <p class="border-t border-black/8 pt-3 text-sm">Joint Replacement</p>
+                <p class="border-t border-black/8 pt-3 text-sm">Shoulder & Knee Arthroscopy</p>
+                <p class="border-t border-black/8 pt-3 text-sm">Orthopaedic Trauma</p>
+                <p class="border-t border-black/8 pt-3 text-sm">Tendon Repairs</p>
+                <p class="border-t border-black/8 pt-3 text-sm">Sports Injuries</p>
+                <p class="border-t border-black/8 pt-3 text-sm">Musculoskeletal Conditions</p>
+              </div>
+            </article>
+
+            <article class="lift reveal rounded-[2rem] bg-health-900 p-7 text-white shadow-card sm:p-9">
+              <div class="flex items-start justify-between">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-health-200">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 12h4l2-7 3 14 2-7h3"/></svg>
+                </div>
+                <span class="text-xs font-bold text-health-200">02 · PHYSIOTHERAPY</span>
+              </div>
+              <h3 class="mt-6 text-2xl font-semibold">Rehabilitation designed around you.</h3>
+              <p class="mt-4 text-sm leading-6 text-white/60">Personalized physiotherapy focused on pain management, therapeutic exercise, movement, strength, function and independence.</p>
+              <div class="mt-8 grid gap-3 sm:grid-cols-2">
+                <p class="border-t border-white/10 pt-3 text-sm">Pain Management</p>
+                <p class="border-t border-white/10 pt-3 text-sm">Therapeutic Exercise</p>
+                <p class="border-t border-white/10 pt-3 text-sm">Neurological Rehabilitation</p>
+                <p class="border-t border-white/10 pt-3 text-sm">Functional Rehabilitation</p>
+                <p class="border-t border-white/10 pt-3 text-sm">Strength & Mobility</p>
+                <p class="border-t border-white/10 pt-3 text-sm">Post-treatment Rehabilitation</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPROACH -->
+      <section id="approach" class="scroll-mt-24 px-5 py-16 lg:px-10">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
+            <div class="reveal">
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">Our approach</p>
+              <h2 class="display mt-3 text-4xl sm:text-5xl">A calm, clear path from pain to progress.</h2>
+            </div>
+            <p class="reveal max-w-2xl text-sm leading-6 text-black/50 sm:text-base">
+              Good care starts with understanding. Ortho First focuses on accurate assessment, individualized treatment and rehabilitation that supports meaningful day-to-day function.
+            </p>
+          </div>
+
+          <div class="mt-14 grid overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card sm:grid-cols-5">
+            <div class="reveal border-b p-6 sm:border-b-0 sm:border-r">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-health-100 text-xs font-bold text-health-800">01</span>
+              <h3 class="mt-8 font-semibold">Assess</h3>
+              <p class="mt-2 text-sm leading-5 text-black/45">Understand the condition, symptoms and individual needs.</p>
+            </div>
+            <div class="reveal border-b p-6 sm:border-b-0 sm:border-r">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-health-100 text-xs font-bold text-health-800">02</span>
+              <h3 class="mt-8 font-semibold">Diagnose</h3>
+              <p class="mt-2 text-sm leading-5 text-black/45">Identify the underlying problem as clearly as possible.</p>
+            </div>
+            <div class="reveal border-b p-6 sm:border-b-0 sm:border-r">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-health-100 text-xs font-bold text-health-800">03</span>
+              <h3 class="mt-8 font-semibold">Treat</h3>
+              <p class="mt-2 text-sm leading-5 text-black/45">Choose an individualized treatment plan for the patient.</p>
+            </div>
+            <div class="reveal border-b p-6 sm:border-b-0 sm:border-r">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-health-100 text-xs font-bold text-health-800">04</span>
+              <h3 class="mt-8 font-semibold">Rehabilitate</h3>
+              <p class="mt-2 text-sm leading-5 text-black/45">Work toward restoring movement, strength and function.</p>
+            </div>
+            <div class="reveal p-6">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-health-100 text-xs font-bold text-health-800">05</span>
+              <h3 class="mt-8 font-semibold">Move Forward</h3>
+              <p class="mt-2 text-sm leading-5 text-black/45">Build confidence for everyday activities and life.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEALTH FEEL / VALUES -->
+      <section class="px-5 pb-20 lg:px-10">
+        <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-health-100 px-7 py-12 sm:px-12 sm:py-16">
+          <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 leaf-shape bg-white/45"></div>
+          <div class="pointer-events-none absolute -bottom-24 -left-10 h-64 w-64 leaf-shape bg-health-200/50"></div>
+
+          <div class="relative grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+            <div class="reveal">
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-health-800">More than treatment</p>
+              <h2 class="display mt-3 text-4xl text-health-950 sm:text-5xl">Helping you feel informed, supported and ready to move.</h2>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div class="reveal rounded-3xl bg-white/80 p-5">
+                <p class="text-sm font-semibold">Listen first</p>
+                <p class="mt-2 text-sm leading-6 text-black/50">Understand the person as well as the condition.</p>
+              </div>
+              <div class="reveal rounded-3xl bg-white/80 p-5">
+                <p class="text-sm font-semibold">Explain clearly</p>
+                <p class="mt-2 text-sm leading-6 text-black/50">Make the diagnosis and treatment pathway easier to understand.</p>
+              </div>
+              <div class="reveal rounded-3xl bg-white/80 p-5">
+                <p class="text-sm font-semibold">Individualize care</p>
+                <p class="mt-2 text-sm leading-6 text-black/50">Treatment and rehabilitation are planned around individual needs.</p>
+              </div>
+              <div class="reveal rounded-3xl bg-white/80 p-5">
+                <p class="text-sm font-semibold">Focus on function</p>
+                <p class="mt-2 text-sm leading-6 text-black/50">Support movement, strength, independence and quality of life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="scroll-mt-24 bg-white px-5 pb-20 lg:px-10">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">Gallery</p>
+              <h2 class="display mt-3 text-4xl sm:text-5xl">Inside Ortho First.</h2>
+            </div>
+            <p class="max-w-lg text-sm leading-6 text-black/50">A look at the consultation, imaging, waiting and rehabilitation spaces within the clinic.</p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-12">
+            <div class="image-zoom reveal overflow-hidden rounded-[2rem] sm:col-span-7">
+              <img src="/assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[330px] w-full object-cover sm:h-[500px]">
+            </div>
+            <div class="grid gap-3 sm:col-span-5">
+              <div class="image-zoom reveal overflow-hidden rounded-[2rem]">
+                <img src="/assets/img1.jpeg" alt="Ortho First consultation room" loading="lazy" class="h-[240px] w-full object-cover">
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="/assets/img3.jpeg" alt="Ortho First X-ray room" loading="lazy" class="h-[250px] w-full object-cover"></div>
+                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="/assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-[250px] w-full object-cover"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img2.jpeg" alt="Ortho First care space" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img5.jpeg" alt="Ortho First clinic corridor" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img7.jpeg" alt="Ortho First healthcare setting" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img8.jpeg" alt="Ortho First facility" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+          </div>
+
+          <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img9.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img10.jpeg" alt="Ortho First care environment" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="/assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="px-5 pb-20 lg:px-10">
+        <div class="reveal mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-health-950 px-7 py-14 text-white sm:px-12 sm:py-16">
+          <div class="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-health-200">Your next step</p>
+              <h2 class="display mt-5 text-4xl sm:text-6xl">Ready to move better?</h2>
+              <p class="mt-6 max-w-xl text-sm leading-6 text-white/55">
+                Contact Ortho First for orthopaedic, physiotherapy and rehabilitation enquiries in Virajpet, Coorg.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <a href="https://wa.me/919148284646?text=Hello%20Ortho%20First%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" rel="noopener noreferrer" class="shine rounded-full bg-white px-6 py-3.5 text-center text-sm font-semibold text-health-950 transition hover:-translate-y-1 hover:bg-health-100">Start on WhatsApp</a>
+              <a href="tel:+919148284646" class="rounded-full border border-white/15 px-6 py-3.5 text-center text-sm font-semibold transition hover:-translate-y-1 hover:bg-white/5">Talk to the clinic</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="scroll-mt-24 bg-health-50 px-5 py-16 lg:px-10">
+        <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.68fr_1.32fr]">
+          <div class="reveal">
+            <p class="text-xs font-bold uppercase tracking-[.22em] text-health-700">Visit Ortho First</p>
+            <h2 class="display mt-3 text-4xl sm:text-5xl">Find us in Panjarpet, Virajpet.</h2>
+
+            <div class="mt-10 space-y-7">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[.14em] text-black/35">Location</p>
+                <address class="mt-2 not-italic text-sm leading-6 text-black/60">
+                  Block no 13, PANJARPET,<br>
+                  Virajpet, Karnataka, India
+                </address>
+              </div>
+
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Ortho%20First%20Block%20no%2013%2C%20PANJARPET%2C%20Virajpet%2C%20Karnataka%2C%20India" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-health-500 hover:text-health-700">
+              Get directions
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <p class="mt-8 text-xs leading-5 text-black/40">
+              Please contact the clinic directly for appointment availability, timings and the exact location.
+            </p>
+          </div>
+
+          <div class="reveal overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-clinic">
+            <iframe
+              title="Ortho First location in Virajpet, Coorg"
+              src="https://www.google.com/maps?q=Ortho%20First%20Block%20no%2013%2C%20PANJARPET%2C%20Virajpet%2C%20Karnataka%2C%20India&output=embed"
+              width="100%"
+              height="520"
+              style="border:0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative overflow-hidden bg-health-950 px-5 py-14 text-white lg:px-10">
+      <div class="footer-orb footer-orb-one"></div>
+      <div class="footer-orb footer-orb-two"></div>
+
+      <div class="relative mx-auto max-w-7xl">
+        <div class="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
+          <div>
+            <img src="/assets/logo.png" alt="Ortho First" width="150" height="70" class="h-14 w-auto object-contain brightness-0 invert">
+            <p class="mt-5 max-w-md text-sm leading-6 text-white/55">
+              Orthopaedic & Physiotherapy Care in Virajpet, Coorg — bringing diagnosis, treatment and rehabilitation together in one calm, patient-centred setting.
+            </p>
+          </div>
+
+          <address class="not-italic lg:text-right">
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-health-200">Visit & contact</p>
+            <p class="mt-3 text-sm leading-6 text-white/70">
+              Block no 13, PANJARPET,<br>
+              Virajpet, Karnataka, India
+            </p>
+            <a href="tel:+919148284646" class="mt-3 inline-block text-base font-semibold text-white transition hover:text-health-200" aria-label="Call Ortho First on 9148284646">9148284646</a>
+          </address>
+        </div>
+
+        <div class="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Ortho First. All rights reserved.</p>
+          <p>Orthopaedic care · Physiotherapy · Rehabilitation</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING ACTIONS -->
+    <div class="floating-actions" aria-label="Quick contact actions">
+      <a href="tel:+919148284646" class="floating-action call-action" aria-label="Call Ortho First" title="Call Ortho First">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 4.8c.4-.5 1-.8 1.6-.6l2.3.8c.6.2 1 .7 1.1 1.3l.3 2.1c.1.5-.1 1-.5 1.3l-1.5 1.2a14.2 14.2 0 0 0 5.1 5.1l1.2-1.5c.3-.4.8-.6 1.3-.5l2.1.3c.6.1 1.1.5 1.3 1.1l.8 2.3c.2.6 0 1.2-.6 1.6l-1.5 1.1c-.7.5-1.6.7-2.4.4A17.5 17.5 0 0 1 4.5 8.7c-.3-.8-.1-1.7.4-2.4L5 4.8Z"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/919148284646?text=Hello%20Ortho%20First%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" rel="noopener noreferrer" class="floating-action whatsapp-action" aria-label="Chat with Ortho First on WhatsApp" title="WhatsApp Ortho First">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 3.2a8.7 8.7 0 0 0-7.5 13.1L3.2 20.8l4.6-1.2A8.8 8.8 0 1 0 12 3.2Zm0 15.8c-1.2 0-2.3-.3-3.3-.9l-.3-.2-2.7.7.7-2.6-.2-.3a6.9 6.9 0 1 1 5.8 3.3Zm3.8-5.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1-.2.2-.5.7-.7.8-.1.2-.3.2-.5.1-1.3-.6-2.2-1.6-2.8-2.8-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 3.9 3.5.5.2.9.3 1.2.4.5.2.9.2 1.2.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.5-.3Z"/>
+        </svg>
+      </a>
+    </div>
+
+    <script>
+      const header = document.getElementById("site-header");
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      function closeMenu() {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+      }
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden", isOpen);
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+      });
+
+      document.querySelectorAll(".mobile-link").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("nav-scrolled", window.scrollY > 12);
+      }, { passive: true });
+
+      const items = document.querySelectorAll(".reveal");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!reduceMotion && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+        items.forEach((item, index) => {
+          item.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
+          observer.observe(item);
+        });
+      } else {
+        items.forEach(item => item.classList.add("show"));
+      }
+    </script>
+  </body>
+  </html>
+
