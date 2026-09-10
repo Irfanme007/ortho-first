@@ -130,8 +130,21 @@
         border-color: rgba(79,115,173,.22);
       }
 
-      .image-zoom img { transition: transform .7s ease; }
-      .image-zoom:hover img { transform: scale(1.035); }
+      .photo-enhanced {
+        filter: brightness(1.045) contrast(1.025) saturate(1.055);
+      }
+
+      .hero-visual img {
+        filter: brightness(1.04) contrast(1.03) saturate(1.06);
+      }
+
+      .image-zoom img {
+        transition: transform .7s ease, filter .35s ease;
+      }
+      .image-zoom:hover img {
+        transform: scale(1.035);
+        filter: brightness(1.055) contrast(1.03) saturate(1.07);
+      }
 
       .nav-scrolled {
         box-shadow: 0 8px 30px rgba(25,63,53,.08);
@@ -147,6 +160,151 @@
 
       @media (max-width: 1023px) {
         body { padding-bottom: 0; }
+      }
+
+      .mobile-proof {
+        display: none;
+      }
+
+      .mobile-call-rail {
+        display: none;
+      }
+
+      @media (max-width: 1023px) {
+        body {
+          padding-bottom: 76px;
+        }
+
+        /* Phone/tablet hero is intentionally text-first: no hero image at all. */
+        .hero-premium > .pointer-events-none {
+          display: none;
+        }
+
+        .hero-premium .grid {
+          display: block;
+        }
+
+        .hero-premium .hero-visual {
+          display: none;
+        }
+
+        .hero-premium .hero-copy {
+          padding-top: 32px !important;
+          padding-bottom: 18px !important;
+        }
+
+        .hero-premium h1 {
+          font-size: 4rem;
+          line-height: .94;
+        }
+
+        .mobile-proof {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 7px;
+          margin-top: 18px;
+        }
+
+        .mobile-proof-card {
+          min-width: 0;
+          padding: 11px 8px;
+          border: 1px solid rgba(27,75,56,.08);
+          border-radius: 15px;
+          background: #f7fbf8;
+        }
+
+        .mobile-proof-card strong {
+          display: block;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 1.35rem;
+          line-height: 1;
+          color: #1b4b38;
+        }
+
+        .mobile-proof-card span {
+          display: block;
+          margin-top: 5px;
+          font-size: 8px;
+          line-height: 1.3;
+          font-weight: 700;
+          letter-spacing: .05em;
+          text-transform: uppercase;
+          color: rgba(0,0,0,.48);
+        }
+
+        .mobile-call-rail {
+          position: fixed;
+          left: 12px;
+          right: 12px;
+          bottom: 12px;
+          z-index: 95;
+          display: flex;
+        }
+
+        .mobile-call-rail a {
+          width: 100%;
+          min-height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 9px;
+          border-radius: 16px;
+          background: #1b4b38;
+          color: #fff;
+          box-shadow: 0 16px 36px rgba(18,56,42,.20);
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: .045em;
+          text-transform: uppercase;
+        }
+
+        .mobile-call-rail svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        /* Avoid two call buttons on phone; WhatsApp stays as the floating contact action. */
+        .floating-actions .call-action {
+          display: none;
+        }
+
+        .floating-actions {
+          right: 14px;
+          bottom: 78px;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .hero-premium h1 {
+          font-size: 3.08rem;
+        }
+
+        .hero-premium .flex.flex-col.gap-3 a {
+          width: 100%;
+        }
+
+        .mobile-proof {
+          gap: 6px;
+        }
+
+        .mobile-proof-card {
+          padding: 10px 6px;
+          border-radius: 14px;
+        }
+
+        .mobile-proof-card strong {
+          font-size: 1.18rem;
+        }
+
+        .mobile-proof-card span {
+          font-size: 7.5px;
+        }
+
+        .mobile-call-rail {
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -283,7 +441,7 @@
           "logo": "https://orthofirst.com/assets/logo.png",
           "image": "https://orthofirst.com/assets/og-image.jpg",
           "telephone": "+919148284646",
-          "description": "Orthopaedic and physiotherapy care in Virajpet, Coorg.",
+          "description": "Orthopaedic and physiotherapy care in Virajpet, Coorg. Dr. Poovaiah C.K. has performed 1000+ surgeries.",
           "medicalSpecialty": ["Orthopedic", "Physiotherapy"],
           "address": {
             "@type": "PostalAddress",
@@ -386,7 +544,7 @@
         <div class="pointer-events-none absolute right-[-80px] top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-health-50/70 blur-3xl"></div>
 
         <div class="relative mx-auto grid max-w-[1440px] items-center lg:min-h-[650px] lg:grid-cols-[.82fr_1.18fr] lg:gap-6">
-          <div class="relative z-10 py-14 sm:py-18 lg:py-20">
+          <div class="hero-copy relative z-10 py-14 sm:py-18 lg:py-20">
             <div class="reveal max-w-[600px]">
               <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-health-200 bg-health-50 px-3.5 py-2 text-xs font-semibold text-health-800">
                 <span class="h-2 w-2 rounded-full bg-health-500"></span>
@@ -416,6 +574,20 @@
                 <span class="rounded-full bg-health-50 px-4 py-2">Personalized treatment</span>
                 <span class="rounded-full bg-health-50 px-4 py-2">Rehabilitation</span>
               </div>
+              <div class="mobile-proof" aria-label="Key clinical experience">
+                <div class="mobile-proof-card">
+                  <strong>10+</strong>
+                  <span>Years ortho</span>
+                </div>
+                <div class="mobile-proof-card">
+                  <strong>1000+</strong>
+                  <span>Surgeries</span>
+                </div>
+                <div class="mobile-proof-card">
+                  <strong>15+</strong>
+                  <span>Years physio</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -424,7 +596,7 @@
             <img src="assets/hospital.png"
                  alt="Ortho First hospital and clinic exterior in Virajpet"
                  width="2048" height="1152" fetchpriority="high"
-                 class="hero-float relative z-10 block h-auto w-full max-w-[920px] object-contain object-center lg:max-w-[980px]">
+                 class="hero-float photo-enhanced hero-media relative z-10 block h-auto w-full max-w-[920px] object-contain object-center lg:max-w-[980px]">
           </div>
         </div>
 
@@ -432,7 +604,7 @@
           <div class="reveal flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-medium uppercase tracking-[.12em] text-black/40">
             <span><strong class="text-health-700">10+</strong> years orthopaedic experience</span>
             <span class="hidden h-4 w-px bg-black/10 sm:block"></span>
-            <span><strong class="text-health-700">200+</strong> hip & knee replacements</span>
+            <span><strong class="text-health-700">1000+</strong> surgeries performed</span>
             <span class="hidden h-4 w-px bg-black/10 sm:block"></span>
             <span><strong class="text-health-700">15+</strong> years physiotherapy experience</span>
           </div>
@@ -476,8 +648,8 @@
               <p class="mt-2 text-sm text-white/55">Years of orthopaedic clinical experience</p>
             </div>
             <div class="reveal border-white/10 sm:border-l sm:pl-8">
-              <strong class="display text-4xl sm:text-5xl">200+</strong>
-              <p class="mt-2 text-sm text-white/55">Hip & knee joint replacement procedures</p>
+              <strong class="display text-4xl sm:text-5xl">1000+</strong>
+              <p class="mt-2 text-sm text-white/55">Surgeries performed</p>
             </div>
             <div class="reveal border-white/10 sm:border-l sm:pl-8">
               <strong class="display text-4xl sm:text-5xl">15+</strong>
@@ -528,7 +700,7 @@
                      loading="lazy"
                      width="1536"
                      height="1024"
-                     class="h-[430px] w-full object-cover sm:h-[560px]">
+                     class="photo-enhanced h-[430px] w-full object-cover sm:h-[560px]">
                 <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-health-950/75 via-health-950/15 to-transparent p-6 sm:p-8">
                   <p class="text-xs font-bold uppercase tracking-[.18em] text-white/65">Care in practice</p>
                   <p class="mt-2 max-w-md text-sm font-semibold leading-6 text-white sm:text-base">
@@ -539,10 +711,10 @@
 
               <div class="mt-3 grid grid-cols-2 gap-3">
                 <div class="image-zoom overflow-hidden rounded-[1.75rem]">
-                  <img src="assets/img3.jpeg" alt="Ortho First X-ray room and equipment" loading="lazy" class="h-[190px] w-full object-cover sm:h-[220px]">
+                  <img src="assets/img3.jpeg" alt="Ortho First X-ray room and equipment" loading="lazy" class="photo-enhanced h-[190px] w-full object-cover sm:h-[220px]">
                 </div>
                 <div class="image-zoom overflow-hidden rounded-[1.75rem]">
-                  <img src="assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[190px] w-full object-cover sm:h-[220px]">
+                  <img src="assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="photo-enhanced h-[190px] w-full object-cover sm:h-[220px]">
                 </div>
               </div>
             </div>
@@ -550,13 +722,13 @@
 
           <div class="reveal mt-10 grid gap-3 sm:grid-cols-3">
             <div class="image-zoom overflow-hidden rounded-[1.75rem]">
-              <img src="assets/img1.jpeg" alt="Ortho First consultation room in Virajpet" loading="lazy" class="h-[210px] w-full object-cover">
+              <img src="assets/img1.jpeg" alt="Ortho First consultation room in Virajpet" loading="lazy" class="photo-enhanced h-[210px] w-full object-cover">
             </div>
             <div class="image-zoom overflow-hidden rounded-[1.75rem]">
-              <img src="assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-[210px] w-full object-cover">
+              <img src="assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="photo-enhanced h-[210px] w-full object-cover">
             </div>
             <div class="image-zoom overflow-hidden rounded-[1.75rem]">
-              <img src="assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="h-[210px] w-full object-cover">
+              <img src="assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="photo-enhanced h-[210px] w-full object-cover">
             </div>
           </div>
         </div>
@@ -578,18 +750,20 @@
             <article class="lift reveal overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card">
               <div class="grid md:grid-cols-[.76fr_1fr]">
                 <div class="image-zoom overflow-hidden bg-health-50">
-                  <img src="assets/sir.jpeg" alt="Dr. Poovaiah C.K., Consultant Orthopaedic Surgeon in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
+                  <img src="assets/sir.jpeg" alt="Dr. Poovaiah C.K., Consultant Orthopaedic Surgeon in Virajpet" width="700" height="850" loading="lazy" class="photo-enhanced h-[360px] w-full object-cover md:h-full">
                 </div>
                 <div class="p-7 sm:p-9">
                   <span class="inline-flex rounded-full bg-health-100 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.12em] text-health-800">Orthopaedic Surgeon</span>
                   <h3 class="mt-4 text-2xl font-semibold">Dr. Poovaiah C.K.</h3>
                   <p class="mt-1 text-sm text-black/45">MBBS, MS (Orthopaedics)</p>
 
+                  
+
                   <p class="mt-6 text-sm leading-6 text-black/55">
                     Consultant Orthopaedic Surgeon with 10+ years of clinical experience in the diagnosis and treatment of a wide range of orthopaedic conditions.
                   </p>
                   <p class="mt-4 text-sm leading-6 text-black/55">
-                    He has performed 200+ hip and knee joint replacement procedures and has expertise in arthroscopic shoulder and knee surgery, orthopaedic trauma, tendon repairs and sports injuries.
+                    He has performed 1000+ surgeries, including 200+ hip and knee joint replacement procedures, with expertise in arthroscopic shoulder and knee surgery, orthopaedic trauma, tendon repairs and sports injuries.
                   </p>
 
                   <div class="my-7 h-px bg-black/8"></div>
@@ -608,11 +782,11 @@
             <article class="lift reveal overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-card">
               <div class="grid md:grid-cols-[.76fr_1fr]">
                 <div class="image-zoom overflow-hidden bg-health-50">
-                  <img src="assets/mam.jpeg" alt="Dr. Impa Poovaiah, Physiotherapist in Virajpet" width="700" height="850" loading="lazy" class="h-[360px] w-full object-cover md:h-full">
+                  <img src="assets/mam.jpeg" alt="Dr. Impa Poovaiah, Physiotherapist in Virajpet" width="700" height="850" loading="lazy" class="photo-enhanced h-[360px] w-full object-cover md:h-full">
                 </div>
                 <div class="p-7 sm:p-9">
                   <span class="inline-flex rounded-full bg-health-100 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.12em] text-health-800">Physiotherapist</span>
-                  <h3 class="mt-4 text-2xl font-semibold">Dr. Impa Poovaiah</h3>
+                  <h3 class="mt-4 text-2xl font-semibold">Dr. Impa Poovaiah(PT)</h3>
                   <p class="mt-1 text-sm text-black/45">BPT, MPT (Neuro)</p>
 
                   <p class="mt-6 text-sm leading-6 text-black/55">
@@ -820,30 +994,30 @@
 
           <div class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-12">
             <div class="image-zoom reveal overflow-hidden rounded-[2rem] sm:col-span-7">
-              <img src="assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="h-[330px] w-full object-cover sm:h-[500px]">
+              <img src="assets/img4.jpeg" alt="Ortho First clinic corridor and waiting area" loading="lazy" class="photo-enhanced h-[330px] w-full object-cover sm:h-[500px]">
             </div>
             <div class="grid gap-3 sm:col-span-5">
               <div class="image-zoom reveal overflow-hidden rounded-[2rem]">
-                <img src="assets/img1.jpeg" alt="Ortho First consultation room" loading="lazy" class="h-[240px] w-full object-cover">
+                <img src="assets/img1.jpeg" alt="Ortho First consultation room" loading="lazy" class="photo-enhanced h-[240px] w-full object-cover">
               </div>
               <div class="grid grid-cols-2 gap-3">
-                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="assets/img3.jpeg" alt="Ortho First X-ray room" loading="lazy" class="h-[250px] w-full object-cover"></div>
-                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-[250px] w-full object-cover"></div>
+                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="assets/img3.jpeg" alt="Ortho First X-ray room" loading="lazy" class="photo-enhanced h-[250px] w-full object-cover"></div>
+                <div class="image-zoom reveal overflow-hidden rounded-[2rem]"><img src="assets/img6.jpeg" alt="Ortho First clinic interior" loading="lazy" class="photo-enhanced h-[250px] w-full object-cover"></div>
               </div>
             </div>
           </div>
 
           <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img2.jpeg" alt="Ortho First care space" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img5.jpeg" alt="Ortho First clinic corridor" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img7.jpeg" alt="Ortho First healthcare setting" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img8.jpeg" alt="Ortho First facility" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img2.jpeg" alt="Ortho First care space" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img5.jpeg" alt="Ortho First clinic corridor" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img7.jpeg" alt="Ortho First healthcare setting" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img8.jpeg" alt="Ortho First facility" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
           </div>
 
           <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img9.jpeg" alt="Ortho First clinic interior" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img10.jpeg" alt="Ortho First care environment" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
-            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img9.jpeg" alt="Ortho First clinic interior" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img10.jpeg" alt="Ortho First care environment" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
+            <div class="image-zoom reveal overflow-hidden rounded-3xl"><img src="assets/img11.jpeg" alt="Ortho First rehabilitation care" loading="lazy" class="photo-enhanced h-56 w-full object-cover sm:h-64"></div>
           </div>
         </div>
       </section>
@@ -897,8 +1071,9 @@
 
           <div class="reveal overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-clinic">
             <iframe
-              title="Ortho First location in Virajpet, Coorg"
-              src="https://www.google.com/maps?q=Ortho%20First%20Block%20no%2013%2C%20PANJARPET%2C%20Virajpet%2C%20Karnataka%2C%20India&output=embed"
+              title="Ortho First location in Panjarpet, Virajpet, Karnataka"
+              aria-label="Map showing Ortho First in Panjarpet, Virajpet, Karnataka"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3899.8492096247764!2d75.80755177506337!3d12.190661688057597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDExJzI2LjQiTiA3NcKwNDgnMzYuNSJF!5e0!3m2!1sen!2sin!4v1789054356787!5m2!1sen!2sin"
               width="100%"
               height="520"
               style="border:0"
@@ -911,6 +1086,16 @@
       </section>
 
     </main>
+
+    <!-- MOBILE CALL TO BOOK -->
+    <div class="mobile-call-rail" aria-label="Appointment booking">
+      <a href="tel:+919148284646" aria-label="Call Ortho First to book an appointment">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 4.8c.4-.5 1-.8 1.6-.6l2.3.8c.6.2 1 .7 1.1 1.3l.3 2.1c.1.5-.1 1-.5 1.3l-1.5 1.2a14.2 14.2 0 0 0 5.1 5.1l1.2-1.5c.3-.4.8-.6 1.3-.5l2.1.3c.6.1 1.1.5 1.3 1.1l.8 2.3c.2.6 0 1.2-.6 1.6l-1.5 1.1c-.7.5-1.6.7-2.4.4A17.5 17.5 0 0 1 4.5 8.7c-.3-.8-.1-1.7.4-2.4L5 4.8Z"/>
+        </svg>
+        Call to Book an Appointment
+      </a>
+    </div>
 
     <!-- FOOTER -->
     <footer class="relative overflow-hidden bg-health-950 px-5 py-14 text-white lg:px-10">
